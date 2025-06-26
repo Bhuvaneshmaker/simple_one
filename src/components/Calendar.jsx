@@ -104,7 +104,7 @@ const Calendar = ({
           <span className="text-gray-600">Birthday</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="text-lg ring-2 ring-pink-400">⭐</div>
+          <div className="text-lg ring-2 ring-green-400">⭐</div>
           <span className="text-gray-600">Work Anniversary</span>
         </div>
       </div>
