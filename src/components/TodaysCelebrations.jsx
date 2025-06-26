@@ -36,7 +36,7 @@ const TodaysCelebrations = ({ todaysBirthdays, todayJoin, calculateAge, getYears
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {todayJoin.map((emp, index) => (
-              <div key={index} className="bg-white bg-opacity-20 rounded-lg p-4">
+              <div key={index} className="bg-white text-black bg-opacity-20 rounded-lg p-4">
                 <h4 className="font-bold text-xl text-black">{emp.name}</h4>
                 <p className="text-green-700">🎉 Stepping to {getYearsOfService(emp.joinDate)} years!</p>
                 <div className="mt-2 p-2 bg-white bg-opacity-10 rounded">
