@@ -119,8 +119,7 @@
           background-color: yellow;
       }
 
-
-        @media (max-width: 768px) {
+@media (max-width: 768px) {
           .calendar-day {
             color:white;
             min-height: 45px;
@@ -135,7 +134,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  animation: logo-spin infinite 20s linear;
   }
 }
 
