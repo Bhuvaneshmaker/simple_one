@@ -32,15 +32,15 @@ const TodaysCelebrations = ({ todaysBirthdays, todayJoin, calculateAge, getYears
         <div className="bg-gradient-to-r from-green-500 to-blue-600 text-white rounded-lg shadow-lg p-6 mb-6">
           <h2 className="text-2xl font-bold mb-4 flex items-center justify-center gap-2">
             <Star className="text-yellow-300" />
-            🎉 Work Anniversary Celebrations! 🎉
+            🎉 Work Anniversary Celebrations! 🎉<Heart className='text-red-300'/>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {todayJoin.map((emp, index) => (
               <div key={index} className="bg-white bg-opacity-20 rounded-lg p-4">
-                <h4 className="font-bold text-xl-black">{emp.name}</h4>
+                <h4 className="font-bold text-xl text-black">{emp.name}</h4>
                 <p className="text-green-700">🎉 Stepping to {getYearsOfService(emp.joinDate)} years!</p>
                 <div className="mt-2 p-2 bg-white bg-opacity-10 rounded">
-                  <p className="text-sm-black">
+                  <p className="text-sm text-black">
                     🎊 "{emp.name} Congratulations on {getYearsOfService(emp.joinDate)} amazing years with us since {formatDate(emp.joinDate)}!"
                   </p>
                 </div>
