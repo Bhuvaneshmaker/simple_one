@@ -50,21 +50,21 @@ function App() {
   }
 
   return (
-    <div className="bhuvi">
-  <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-100">
-    <div className="container mx-auto px-4 py-8">
-      
-      {/* Header */}
-      <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold text-purple-800 mb-2 flex items-center justify-center gap-3">
-          <Gift className="text-pink-600" />
-          Birthday & Joinday
-          <Cake className="text-pink-600" />
-        </h1>
-        <p className="text-gray-600">Celebrating every milestone, every year! 🎉</p>
-      </div>
+   <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-100 py-8">
+  <div className="container mx-auto px-4 space-y-8">
 
-      {/* Today's Celebrations */}
+    {/* Header */}
+    <div className="text-center">
+      <h1 className="text-4xl font-bold text-purple-800 mb-2 flex justify-center items-center gap-3">
+        <Gift className="text-pink-600" />
+        Birthday & Joinday
+        <Cake className="text-pink-600" />
+      </h1>
+      <p className="text-gray-600">Celebrating every milestone, every year! 🎉</p>
+    </div>
+
+    {/* Today's Celebrations */}
+    <div className="w-full">
       <TodaysCelebrations
         todaysBirthdays={todaysBirthdays}
         todayJoin={todayJoin}
@@ -72,49 +72,45 @@ function App() {
         getYearsOfService={getYearsOfService}
         formatDate={formatDate}
       />
-
-      {/* Main Content Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        
-        {/* Calendar - spans 2 cols on md & lg screens */}
-        <div className="md:col-span-2 lg:col-span-2">
-          <Calendar
-            currentMonth={currentMonth}
-            selectedDate={selectedDate}
-            setSelectedDate={setSelectedDate}
-            setCurrentMonth={setCurrentMonth}
-            hasBirthdayOnDate={hasBirthdayOnDate}
-            isJoinDate={isJoinDate}
-          />
-        </div>
-
-        {/* Stats */}
-        <div className="md:col-span-1 lg:col-span-1">
-          <Stats employees={employees} currentMonth={currentMonth} />
-        </div>
-
-        {/* Selected Date Details */}
-        <div className="md:col-span-1 lg:col-span-1">
-          <DateDetails
-            selectedDate={selectedDate}
-            birthdayEmployees={birthdayEmployees}
-            joinEmployee={joinEmployee}
-            calculateAge={calculateAge}
-            getYearsOfService={getYearsOfService}
-            formatDate={formatDate}
-          />
-        </div>
-
-        {/* Add Employee Form - Full width on small, 2 cols on md */}
-        <div className="md:col-span-2 lg:col-span-2">
-          <EmployeeForm 
-            onAddEmployee={handleAddEmployee}
-            isLoading={isAddingEmployee}
-          />
-        </div>
-      </div>
-
     </div>
+
+    {/* Calendar */}
+    <div className="w-full">
+      <Calendar
+        currentMonth={currentMonth}
+        selectedDate={selectedDate}
+        setSelectedDate={setSelectedDate}
+        setCurrentMonth={setCurrentMonth}
+        hasBirthdayOnDate={hasBirthdayOnDate}
+        isJoinDate={isJoinDate}
+      />
+    </div>
+
+    {/* Stats */}
+    <div className="w-full">
+      <Stats employees={employees} currentMonth={currentMonth} />
+    </div>
+
+    {/* Date Details */}
+    <div className="w-full">
+      <DateDetails
+        selectedDate={selectedDate}
+        birthdayEmployees={birthdayEmployees}
+        joinEmployee={joinEmployee}
+        calculateAge={calculateAge}
+        getYearsOfService={getYearsOfService}
+        formatDate={formatDate}
+      />
+    </div>
+
+    {/* Add Employee Form */}
+    <div className="w-full">
+      <EmployeeForm 
+        onAddEmployee={handleAddEmployee}
+        isLoading={isAddingEmployee}
+      />
+    </div>
+
   </div>
 </div>
   );
