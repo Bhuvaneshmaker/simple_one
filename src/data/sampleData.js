@@ -471,7 +471,7 @@
     {
     "id": 68,
     "name": "Unknown",
-    "birthday": "Monday, October 26, 2000",
+    "birthday": "Monday, June 26, 2000",
     "joinDate": "Thursday, June 26, 2024",
     "": ""
   },
