@@ -1,7 +1,8 @@
-
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}", // adjust if needed
+  ],
   theme: {
     extend: { keyframes: {
         'horizontal-scroll': {
@@ -17,11 +18,11 @@ export default {
         'horizontal-scroll': 'horizontal-scroll 20s linear infinite',
         'fadeInUp': 'fadeInUp 0.5s ease-out forwards'
       }},
-  },
   
+  },
   plugins: [
       require('@tailwindcss/forms'),
       require('@tailwindcss/typography'),
       require('@tailwindcss/aspect-ratio'),
   ],
-};
+}
