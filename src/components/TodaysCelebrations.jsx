@@ -39,7 +39,7 @@ const TodaysCelebrations = ({ todaysBirthdays, todayJoin, calculateAge, getYears
               <div key={index} className="bg-white text-black bg-opacity-20 rounded-lg p-4">
                 <h4 className="font-bold text-xl text-black">{emp.name}</h4>
                 <p className="text-green-700">🎉 Stepping to {getYearsOfService(emp.joinDate)} years!</p>
-                <div className="mt-2 p-2 bg-white bg-opacity-10 rounded">
+                <div className="mt-2 p-2 bg-grey-200 bg-opacity-10 rounded">
                   <p className="text-sm text-black">
                     🎊 "{emp.name} Congratulations on {getYearsOfService(emp.joinDate)} amazing years with us since {formatDate(emp.joinDate)}!"
                   </p>
