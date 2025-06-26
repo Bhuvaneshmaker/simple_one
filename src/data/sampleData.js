@@ -470,9 +470,9 @@
   },
     {
     "id": 68,
-    "name": "Default",
-    "birthday": "Tuesday, October 17, 2000",
-    "joinDate": "Tuesday, June 25, 2024",
+    "name": "Unknown",
+    "birthday": "Monday, October 26, 2000",
+    "joinDate": "Thursday, June 26, 2024",
     "": ""
   },
   {
