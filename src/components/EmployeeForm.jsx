@@ -36,7 +36,7 @@ const EmployeeForm = ({ onAddEmployee, isLoading }) => {
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
-            Employee ID
+            Employee ID :
           </label>
           <input
             type="string"
@@ -51,7 +51,7 @@ const EmployeeForm = ({ onAddEmployee, isLoading }) => {
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
-            Employee Name
+            Employee Name :
           </label>
           <input
             type="string"
@@ -66,11 +66,12 @@ const EmployeeForm = ({ onAddEmployee, isLoading }) => {
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
-            Date of Birth
+            Date of Birth :
           </label>
           <input
             type="date"
             name="birthday"
+            placeholder = "Date of Birth"
             value={formData.birthday}
             onChange={handleChange}
             className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
@@ -85,6 +86,7 @@ const EmployeeForm = ({ onAddEmployee, isLoading }) => {
           <input
             type="date"
             name="joinDate"
+            placeholder="Date of Joining"
             value={formData.joinDate}
             onChange={handleChange}
             className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
