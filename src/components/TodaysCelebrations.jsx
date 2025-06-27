@@ -15,7 +15,7 @@ const TodaysCelebrations = ({ todaysBirthdays, todayJoin, calculateAge, getYears
             {todaysBirthdays.map((emp, index) => (
               <div key={index} className="bg-black bg-opacity-20 rounded-lg p-4">
                 <h4 className="font-bold text-xl">{emp.name}</h4>
-                <p className="text-pink-100">🎂 Turning {calculateAge(emp.birthday)} years old!</p>
+                <p className="text-pink-700">🎂 Turning {calculateAge(emp.birthday)} years old!</p>
                 <div className="mt-2 p-2 bg-white bg-opacity-10 rounded">
                   <p className="text-sm">
                     🎊 "Wishing you a fantastic birthday filled with joy, laughter, and wonderful memories!"
