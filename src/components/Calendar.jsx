@@ -56,8 +56,8 @@ const Calendar = ({
         >
           <span className="text-sm font-medium">{day}</span>
           <div className="flex gap-1 absolute -bottom-1">
-            {hasBday && <div className="text-sm">🎂</div>}
-            {hasJoin && <div className="text-sm">⭐</div>}
+            {hasBday && <div className="text-sm animate-bounce">🎂</div>}
+            {hasJoin && <div className="text-sm animate-bounce">⭐</div>}
           </div>
         </div>
       );
