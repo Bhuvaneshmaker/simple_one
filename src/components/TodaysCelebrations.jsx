@@ -11,7 +11,7 @@ const TodaysCelebrations = ({ todaysBirthdays, todayJoin, calculateAge, getYears
             <Star className="text-yellow-300 animate-spin" />
             🎉 Today's Birthday Celebrations! 🎉  <Heart className='text-red-300 animate-bounce'/>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2  items-center justify-center gap-4">
+          <div className="rid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center">
             {todaysBirthdays.map((emp, index) => (
               <div key={index} className="bg-black bg-opacity-20 rounded-lg p-4">
                 <h4 className="font-bold text-xl">{emp.name}</h4>
@@ -34,7 +34,7 @@ const TodaysCelebrations = ({ todaysBirthdays, todayJoin, calculateAge, getYears
             <Star className="text-yellow-300 animate-spin" />
             🎉 Work Anniversary Celebrations! 🎉<Heart className='text-red-300 animate-bounce'/>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2  items-center justify-center  gap-4">
+          <div className="rid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center">
             {todayJoin.map((emp, index) => (
               <div key={index} className="bg-white text-black bg-opacity-20  rounded-lg p-4">
                 <h4 className="font-bold text-xl text-black">{emp.name}</h4>
