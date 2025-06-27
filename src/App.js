@@ -86,10 +86,6 @@ function App() {
       />
     </div>
 
-    {/* Stats */}
-    <div className="w-full">
-      <Stats employees={employees} currentMonth={currentMonth} />
-    </div>
 
     {/* Date Details */}
     <div className="w-full">
@@ -103,6 +99,12 @@ function App() {
       />
     </div>
 
+        {/* Stats */}
+    <div className="w-full">
+      <Stats employees={employees} currentMonth={currentMonth} />
+    </div>
+  
+  
     {/* Add Employee Form */}
     <div className="w-full">
       <EmployeeForm 
