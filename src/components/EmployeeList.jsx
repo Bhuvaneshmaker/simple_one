@@ -131,7 +131,7 @@ const filteredEmployees = employees
                   className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors duration-200"
                   title="Remove employee"
                 >
-                  <Trash2 className="w-4 h-4" />
+                  <Trash2 className="w-5 h-5" />
                 </button>
               </div>
             </div>
