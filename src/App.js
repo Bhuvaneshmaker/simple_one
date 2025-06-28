@@ -9,6 +9,7 @@ import Stats from './components/Stats';
 import EmployeeList from './components/EmployeeList';
 import EmployeeForm from './components/EmployeeForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
 
 function App() {
   const { employees, loading, addEmployee } = useEmployees();
