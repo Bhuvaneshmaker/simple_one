@@ -29,16 +29,11 @@ const filteredEmployees = employees
     }
   });
 
-const handleRemove = async (employee) => {
-  if (window.confirm(`Are you sure you want to remove ${employee.name}?`)) {
-    try {
-      await employeeService.removeEmployee(employee);
-       await employeeService.getEmployees();
-    } catch (error) {
-      console.error("Failed to delete employee:", error);
+  const handleRemove = async (employee) => {
+    if (window.confirm(`Are you sure you want to remove ${employee.name}?`)) {
+      await removeEmployee(employee);
     }
-  }
-};
+  };
 
   const formatDate = (dateStr) => {
     return new Date(dateStr).toLocaleDateString('en-US', {
