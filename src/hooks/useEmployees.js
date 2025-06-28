@@ -12,7 +12,7 @@ export const useEmployees = () => {
     setLoading(true);
     setError(null);
     try {
-      const firebaseEmployees = await employeeService.getEmployees();
+      const firebaseEmployees = await employeeService.getEmployee();
       
       if (firebaseEmployees.length === 0) {
         console.warn('No employees in Firebase, using sample data');
