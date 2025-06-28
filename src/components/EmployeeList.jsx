@@ -33,7 +33,7 @@ const handleRemove = async (employee) => {
   if (window.confirm(`Are you sure you want to remove ${employee.name}?`)) {
     try {
       await employeeService.removeEmployee(employee);
-      await getEmployee(employee)
+      await getEmployee()
     } catch (error) {
       console.error("Failed to delete employee:", error);
     }
