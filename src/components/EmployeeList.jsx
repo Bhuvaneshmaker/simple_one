@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Users, Trash2, Search, } from 'lucide-react';
 import { employeeService} from "../services/firebase"
 
-const EmployeeList = ({ employees, removeEmployee }) => {
+const EmployeeList = ({ employees, removeEmployee ,getEmployee}) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('name');
 
@@ -33,7 +33,7 @@ const handleRemove = async (employee) => {
   if (window.confirm(`Are you sure you want to remove ${employee.name}?`)) {
     try {
       await employeeService.removeEmployee(employee);
-     
+       await employeeService.getEmployees();
     } catch (error) {
       console.error("Failed to delete employee:", error);
     }
