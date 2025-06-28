@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Users, Trash2, Search, } from 'lucide-react';
 
-const EmployeeList = ({ employees, removeEmployees }) => {
+const EmployeeList = ({ employees, removeEmployee }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('name');
 
@@ -30,7 +30,7 @@ const filteredEmployees = employees
 
   const handleRemove = async (employee) => {
     if (window.confirm(`Are you sure you want to remove ${employee.name}?`)) {
-      await removeEmployees(employee);
+      await removeEmployee(employee);
     }
   };
 
