@@ -12,7 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 
 function App() {
-  const { employees, loading, addEmployee } = useEmployees();
+  const { employees, loading, addEmployee,setEmployees,removeEmployee } = useEmployees();
   const [isAddingEmployee, setIsAddingEmployee] = useState(false);
   
   const {
@@ -39,7 +39,14 @@ function App() {
       setIsAddingEmployee(false);
     }
   };
-
+  
+  const handleRemove = async (employee) => {
+    try {
+      await removeEmployee(employee);
+    } catch (error) {
+      console.error('Error removing employee:', error);
+    }
+  };
   if (loading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-100 flex items-center justify-center">
