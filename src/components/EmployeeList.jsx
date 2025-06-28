@@ -29,16 +29,11 @@ const filteredEmployees = employees
     }
   });
 
-const handleRemove = async (employee) => {
-  const confirmDelete = window.confirm(`Are you sure you want to remove ${employee.name}?`);
-  if (!confirmDelete) return;
-
+  const handleRemove = async (employee) => {
   try {
     await employeeService.removeEmployee(employee);
-    // Refresh or update the employee list after successful deletion
-    setEmployees((prevEmployees) => 
-      prevEmployees.filter((e) => e.id !== employee.id)
-    );
+    // Optionally refresh the employee list or update the state
+    if (window.confirm(`Are you sure you want to remove ${employee.name}?`))
   } catch (error) {
     console.error("Failed to delete employee:", error);
   }
