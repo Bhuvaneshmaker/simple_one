@@ -49,7 +49,7 @@ export const employeeService = {
   },
 
   // Get all employees
-  async getEmployees() {
+  async getEmployee() {
     try {
       const q = query(collection(db, 'employees'), orderBy('id'));
       const snapshot = await getDocs(q);
