@@ -51,7 +51,7 @@ export const useEmployees = () => {
   // Remove employee
   const removeEmployee = async (employee) => {
     try {
-      await employeeService.removeEmployees(employee);
+      await employeeService.removeEmployee(employee);
       setEmployees(prev => prev.filter(emp => emp.id !== employee.id));
     } catch (err) {
       console.error('Error removing employee:', err);
