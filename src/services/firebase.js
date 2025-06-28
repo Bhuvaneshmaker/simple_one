@@ -35,7 +35,7 @@ export const employeeService = {
   },
 
     // Remove employee by ID
-  async removeEmployees(employee) {
+  async removeEmployee(employee) {
     try {
       await deleteDoc(doc(db, "employees", employee.id));
       console.log("Employee deleted:", employee.id);
