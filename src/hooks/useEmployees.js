@@ -48,15 +48,29 @@ export const useEmployees = () => {
     }
   };
 
+  // Remove employee
+  const removeEmployee = async (employee) => {
+    try {
+      await employeeService.removeEmployees(employee);
+      setEmployees(prev => prev.filter(emp => emp.id !== employee.id));
+    } catch (err) {
+      console.error('Error removing employee:', err);
+      // Remove locally even if Firebase fails
+      setEmployees(prev => prev.filter(emp => emp.id !== employee.id));
+    }
+  };
+
   useEffect(() => {
     loadEmployees();
   }, []);
 
   return {
     employees,
+    setEmployees,
     loading,
     error,
     addEmployee,
+    removeEmployee,
     refreshEmployees: loadEmployees
   };
 };
