@@ -1,12 +1,12 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, doc, setDoc, getDocs, query, orderBy,deleteDoc } from 'firebase/firestore';
+import { getFirestore, collection, doc, setDoc, getDocs, query, orderBy, deleteDoc } from 'firebase/firestore';
 
 // Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDWf5ufZip3ZV-QaM98D97G8EM3lcfli68",
   authDomain: "birthday-wish-a09aa.firebaseapp.com",
   projectId: "birthday-wish-a09aa",
-  storageBucket: "birthday-wish-a09aa.appspot.com", // fixed typo
+  storageBucket: "birthday-wish-a09aa.appspot.com",
   messagingSenderId: "917216787421",
   appId: "1:917216787421:web:d50d24c4d98f2da1249434",
   measurementId: "G-LDH40RDQ0B"
@@ -21,7 +21,7 @@ export const employeeService = {
   // Add new employee with custom ID
   async addEmployee(employee) {
     try {
-      const id = String(employee.id || Date.now()); //callback if id is missing
+      const id = String(employee.id || Date.now()); 
       const docRef = doc(db, 'employees', id);
       await setDoc(docRef, {
         ...employee,
@@ -34,11 +34,14 @@ export const employeeService = {
     }
   },
 
-    // Remove employee by ID
+  // Remove employee by ID
   async removeEmployee(employee) {
     try {
-      await deleteDoc(doc(db, "employees", employee.id || empolyee.name));
-      console.log("Employee deleted:", employee.id || empolyee.name);
+      if (!employee.id) {
+        throw new Error("Employee ID is required for deletion.");
+      }
+      await deleteDoc(doc(db, "employees", employee.id));
+      console.log("Employee deleted:", employee.id);
     } catch (error) {
       console.error("Error deleting employee:", error);
       throw error;
