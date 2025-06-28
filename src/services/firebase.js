@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, doc, setDoc, getDocs, query, orderBy } from 'firebase/firestore';
-
+import { getFirestore, collection, doc, setDoc, getDocs, query, orderBy,deleteDoc } from 'firebase/firestore';
+import {db} from "firebase/db"
 // Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDWf5ufZip3ZV-QaM98D97G8EM3lcfli68",
@@ -30,6 +30,17 @@ export const employeeService = {
       return { id, ...employee };
     } catch (error) {
       console.error('Error adding employee:', error);
+      throw error;
+    }
+  },
+
+    // Remove employee by ID
+  async removeEmployees(employee) {
+    try {
+      await deleteDoc(doc(db, "employees", employee.id));
+      console.log("Employee deleted:", employee.id);
+    } catch (error) {
+      console.error("Error deleting employee:", error);
       throw error;
     }
   },
