@@ -29,13 +29,14 @@ const filteredEmployees = employees
     }
   });
 
-  const handleRemove = async (employee) => {
-  try {
-    await employeeService.removeEmployee(employee);
-    // Optionally refresh the employee list or update the state
-    if (window.confirm(`Are you sure you want to remove ${employee.name}?`))
-  } catch (error) {
-    console.error("Failed to delete employee:", error);
+const handleRemove = async (employee) => {
+  if (window.confirm(`Are you sure you want to remove ${employee.name}?`)) {
+    try {
+      await employeeService.removeEmployee(employee);
+      await fetchEmployees(); // Re-fetch the updated list
+    } catch (error) {
+      console.error("Failed to delete employee:", error);
+    }
   }
 };
 
