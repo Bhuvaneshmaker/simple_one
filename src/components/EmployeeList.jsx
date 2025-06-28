@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Users, Trash2, Search, } from 'lucide-react';
-import employeeService from "../services/firebase"
+import { employeeService } from "../services/firebase"
 
 const EmployeeList = ({ employees, removeEmployee }) => {
   const [searchTerm, setSearchTerm] = useState('');
