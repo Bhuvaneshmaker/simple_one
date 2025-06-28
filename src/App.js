@@ -6,6 +6,7 @@ import TodaysCelebrations from './components/TodaysCelebrations';
 import Calendar from './components/Calendar';
 import DateDetails from './components/DateDetails';
 import Stats from './components/Stats';
+import EmployeeList from './components/EmployeeList';
 import EmployeeForm from './components/EmployeeForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -112,7 +113,21 @@ function App() {
         isLoading={isAddingEmployee}
       />
     </div>
-
+            {/* Employee List */}
+        <div className="w-full">
+          {employees && employees.length > 0 ? (
+            <EmployeeList
+              employees={employees}
+              setEmployees={setEmployees}
+              removeEmployee={handleRemove}
+            />
+          ) : (
+            <div className="bg-white rounded-lg shadow-md p-8 text-center">
+              <p className="text-gray-500 text-lg">No employees found.</p>
+              <p className="text-gray-400 text-sm mt-2">Add your first employee to get started!</p>
+            </div>
+          )}
+        </div>
   </div>
 </div>
   );
